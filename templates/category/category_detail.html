@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+</head>
+<body>
+<div>
+    <h2>{{ object.category_name }}</h2>
+</div>
+    <div>
+        <h2>Shows: </h2>
+            <ul>
+                {% for i in object.shows.all %}
+                    <li>
+                        <h2>{{ i.title }}</h2>
+                        <p>{{ i.body}}</p>
+                        <img src="{{ i.image.url }}" alt="">
+                        <p>{{ i.created_date}}</p>
+                        <p>{{ i.updated}}</p>
+                        <p>{{ i.category}}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+    </div>
+</body>
+</html>
