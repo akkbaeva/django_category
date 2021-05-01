@@ -13,12 +13,11 @@
             <ul>
                 {% for i in object.shows.all %}
                     <li>
-                        <h2>{{ i.title }}</h2>
+                        <h2><a href="/show/{{ i.pk }}/">{{ i.title }}</a></h2>
                         <p>{{ i.body}}</p>
                         <img src="{{ i.image.url }}" alt="">
                         <p>{{ i.created_date}}</p>
                         <p>{{ i.updated}}</p>
-                        <p>{{ i.category}}</p>
                     </li>
                 {% endfor %}
             </ul>

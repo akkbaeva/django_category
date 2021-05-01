@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TV-Show List</title>
+    <title>User</title>
 </head>
 <body>
 <ul>
     {% for i in object_list %}
         <li>
-        <h2><a href="/show/{{ i.pk }}/">{{ i.title }}</a></h2>
-        <img src="{{ i.image.url}}" alt="">
+        <h2> {{ i.user_name }} </h2>
         </li>
     {% endfor %}
 </ul>

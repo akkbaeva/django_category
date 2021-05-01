@@ -25,10 +25,12 @@ class TVShow(models.Model):
                                    verbose_name='Дата обновления')
     image = models.ImageField()
     category = models.ForeignKey(Category,
-                                 on_delete=models.CASCADE, related_name='shows')
+                                 on_delete=models.CASCADE, related_name='shows',
+                                 null=True)
 
 
 class Comment(models.Model):
     text = models.TextField()
     shows = models.ForeignKey(TVShow,
-                              on_delete=models.CASCADE, related_name='comments')
+                              on_delete=models.CASCADE, related_name='comments',
+                              null=True)

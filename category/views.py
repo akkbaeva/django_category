@@ -34,13 +34,12 @@ class TVShowDetailListView(DetailView):
     extra_context = {'form': CommentForm()}
 
     @csrf_exempt
-    def post(self, request, *args, **kwargs):
-        if request.user:
-            show_id = kwargs['pk']
-            show = TVShow.objects.get(pk=show_id)
-            form = CommentForm(request.POST, initial={'show': show})
-            if form.is_valid():
-                form.save()
+    def post(self, request, pk, *args, **kwargs):
+        show = TVShow.objects.get(pk=pk)
+        print(pk)
+        form = CommentForm(request.POST, initial={'show': show})
+        if form.is_valid():
+            form.save()
         return self.get(request, *args, **kwargs)
 
 
