@@ -2,18 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User</title>
+    <title>User Detail</title>
 </head>
 <body>
-<ul>
-    {% for i in object.user.all %}
+    <ul>
         <li>
             <p> {{ i.first_name }} </p>
             <p> {{ i.last_name }} </p>
             <p> {{ i.age }} </p>
             <p> {{ i.email }} </p>
         </li>
-    {% endfor %}
-</ul>
+    </ul>
 </body>
 </html>
